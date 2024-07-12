@@ -18,7 +18,7 @@ body {
 }
 
 .bg-two {
-  background-color: rgba(17, 100, 102, 0.2);
+  background-color: rgba(17, 100, 102, 0.7);
 }
 
 a {
@@ -82,10 +82,13 @@ a {
   align-items: center;
   z-index: 997;
   overflow-y: auto;
-  background: url("../assets/img/bg_01.jpeg") no-repeat center center/cover;
+  background: rgba(0, 0, 0, 0.2)
+    url("./img/a-tech-savvy-workspace-with-a-programmer-intently--xiBbVvSWTV2ahOcQtWF9bg-_Ho0BfGdQouUx_tHb356LA.jpeg")
+    no-repeat center center/cover;
   left: 0;
   right: 0;
   top: 0;
+  background-blend-mode: darken;
 }
 
 #header h1 {
@@ -149,12 +152,12 @@ section {
   transition: ease-in-out 0.4s;
   z-index: 2;
   padding: 6rem 0;
-  margin-top: 2rem;
 }
 
 section .container {
   background: rgba(17, 100, 102, 0.5);
   padding: 30px;
+  border-radius: 1rem;
 }
 
 .section-title h2 {
@@ -189,6 +192,7 @@ section .container {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
 .about-me .content h3 {
   font-weight: 800;
   font-size: 26px;
@@ -229,6 +233,10 @@ section .container {
   transition: ease-in-out 0.5s;
 }
 
+#about img {
+  border-radius: 2rem;
+}
+
 /*--------------------------------------------------------------
 # Skills and interest
 --------------------------------------------------------------*/
@@ -263,6 +271,12 @@ section .container {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+#resume {
+  background: rgba(0, 0, 0, 0.6) url(./img/bg3.jpeg) no-repeat center
+    center/cover;
+  background-blend-mode: darken;
+}
+
 .resume .resume-title {
   font-size: 16px;
   font-weight: 700;
@@ -325,7 +339,6 @@ section .container {
 # Work
 --------------------------------------------------------------*/
 .work .work-item {
-  margin-bottom: 30px;
   padding: 1rem;
 }
 
@@ -372,6 +385,7 @@ section .container {
   overflow: hidden;
   z-index: 1;
   background: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
 }
 
 .work .work-wrap::before {
@@ -502,10 +516,74 @@ section .container {
 }
 
 /*--------------------------------------------------------------
+# Time Line
+--------------------------------------------------------------*/
+
+.timeline-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.timeline-list:before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: #80ed99;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.timeline-list .list {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-list .list .timeline_content {
+  color: #fff;
+  float: left;
+  text-align: right;
+  border-radius: 10px;
+  padding: 2rem;
+}
+.timeline-list .list:nth-child(2n) .timeline_content {
+  float: right;
+  text-align: left;
+}
+.timeline_content h4 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.timeline-list .list:before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: #80ed99;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.timeline_content span {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: poppins;
+  color: #ff3636;
+}
+
+.timeline-list .timeline-text {
+  padding: 4rem 4rem 0 4rem;
+}
+
+/*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 #contact {
-  background: url(.//img/bg_bluegreen04.jpeg) no-repeat center center/80%;
+  background: url(.//img/bg_bluegreen04.jpeg) no-repeat center center/cover;
 }
 
 .contact .info-box {
@@ -712,16 +790,23 @@ footer .form-floating input:focus {
   color: #fff;
 }
 
-/* #footer .footer-container {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: rgba(44, 53, 49, 0.9);
-}
+/* Media */
 
-.footer-container p {
-  margin: 10px 0;
-} */
+@media (max-width: 425px) {
+  .timeline-list:before {
+    left: -3%;
+  }
+
+  .timeline-list .list:before {
+    left: -3%;
+  }
+  .timeline-list .list .timeline_content {
+    padding: 0;
+  }
+  .timeline-list .timeline-text {
+    padding: 1rem 1rem 0 1rem;
+  }
+  .resume .resume-item h4 {
+    line-height: 22px;
+  }
+}
