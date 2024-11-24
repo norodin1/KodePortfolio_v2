@@ -18,7 +18,7 @@ body {
 }
 
 .bg-two {
-  background-color: rgba(17, 100, 102, 0.7);
+  background-color: rgba(44, 53, 49, 0.3);
 }
 
 a {
@@ -28,7 +28,7 @@ a {
 
 /* Navbar */
 .logo-image img {
-  width: 46px;
+  width: 120px;
   border-radius: 30%;
   overflow: hidden;
   margin-top: -6px;
